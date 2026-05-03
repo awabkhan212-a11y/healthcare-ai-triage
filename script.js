@@ -64,3 +64,55 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// =======================================
+// EmailJS & Dialogflow Integration
+// =======================================
+
+// 1. Initialize EmailJS (Uncomment and add your Public Key once registered)
+(function() {
+    // emailjs.init("YOUR_PUBLIC_KEY"); 
+})();
+
+// 2. Listen to Dialogflow Messenger events
+window.addEventListener('df-response-received', function(event) {
+    const response = event.detail.response;
+    
+    // Safety check
+    if (!response || !response.queryResult) return;
+    
+    const botResponseText = response.queryResult.fulfillmentText || "";
+    const intentName = response.queryResult.intent ? response.queryResult.intent.displayName : "";
+    
+    // Check if the bot confirmed an appointment. 
+    // We check the intent name or the actual bot message for confirmation keywords.
+    const isConfirmed = intentName.toLowerCase().includes("appointment") || 
+                        botResponseText.toLowerCase().includes("appointment confirmed") || 
+                        botResponseText.toLowerCase().includes("has been booked");
+
+    if (isConfirmed) {
+        console.log("Appointment confirmed! Triggering email notification...");
+        
+        // Prepare data for the email template
+        const templateParams = {
+            to_email: 'awabkhan212@gmail.com',
+            patient_request: response.queryResult.queryText, // What the user said
+            timestamp: new Date().toLocaleString(),
+            confirmation_message: botResponseText
+        };
+        
+        // 3. Send email using EmailJS
+        // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual EmailJS IDs
+        /*
+        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+            .then(function(response) {
+                console.log('SUCCESS! Email sent.', response.status, response.text);
+            }, function(error) {
+                console.log('FAILED to send email.', error);
+            });
+        */
+        
+        // Alert developer in console for testing
+        console.log("Ready to send email with payload:", templateParams);
+    }
+});
