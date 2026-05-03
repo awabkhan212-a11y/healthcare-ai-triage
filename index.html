@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare AI Triage System</title>
+    <meta name="description" content="Get instant symptom guidance and triage support with our AI-powered Healthcare Assistant.">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Dialogflow Messenger -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="header">
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-notes-medical"></i> Health<span>AI</span>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#triage">Triage</a></li>
+                    <li><a href="#features">Features</a></li>
+                </ul>
+            </nav>
+            <a href="#triage" class="btn btn-outline">Get Support</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-bg-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+            </div>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="badge fade-in-up">AI-Powered Assistance</span>
+                    <h1 class="fade-in-up delay-1">Healthcare AI Triage System</h1>
+                    <p class="fade-in-up delay-2">Get instant symptom guidance and triage support directly from our advanced AI agent. Available 24/7 to guide you to the right care.</p>
+                    <div class="hero-buttons fade-in-up delay-3">
+                        <a href="#triage" class="btn btn-primary">Start Assessment <i class="fa-solid fa-stethoscope"></i></a>
+                        <a href="#features" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chatbot Section -->
+        <section id="triage" class="triage-section">
+            <div class="container text-center">
+                <div class="section-heading slide-in">
+                    <h2>Interactive Triage Assistant</h2>
+                    <p>Interact with our intelligent agent below to analyze your symptoms.</p>
+                </div>
+                
+                <div class="chat-wrapper slide-in delay-2">
+                    <div class="chat-instruction-box">
+                        <div class="pulse-icon">
+                            <i class="fa-regular fa-comment-dots"></i>
+                        </div>
+                        <h3>The AI Agent is Ready</h3>
+                        <p>Click the chat icon in the bottom right corner of your screen to begin your symptom assessment.</p>
+                        <button class="btn btn-primary" onclick="openChat()">Open Chat</button>
+                    </div>
+
+                    <!-- Embed Dialogflow exactly as requested -->
+                    <df-messenger
+                      intent="WELCOME"
+                      chat-title="HealthcareTriageAgent"
+                      agent-id="1bbc8857-8e5e-45f3-aaf2-84155642e2a3"
+                      language-code="en"
+                    ></df-messenger>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features-section">
+            <div class="container">
+                <div class="section-heading text-center slide-in">
+                    <h2>Comprehensive Health Support</h2>
+                    <p>Our system uses advanced AI to provide reliable guidance.</p>
+                </div>
+                
+                <div class="features-grid">
+                    <!-- Feature 1 -->
+                    <div class="feature-card slide-in delay-1">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-clipboard-user"></i>
+                        </div>
+                        <h3>Symptom Analysis</h3>
+                        <p>Describe what you're feeling, and our AI will analyze your symptoms to provide potential causes and general recommendations.</p>
+                    </div>
+                    
+                    <!-- Feature 2 -->
+                    <div class="feature-card emergency slide-in delay-2">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-truck-medical"></i>
+                        </div>
+                        <h3>Emergency Detection</h3>
+                        <p>Our system is trained to detect critical symptoms and alert you immediately if you need to seek urgent emergency care.</p>
+                    </div>
+                    
+                    <!-- Feature 3 -->
+                    <div class="feature-card slide-in delay-3">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+                        <h3>Appointment Guidance</h3>
+                        <p>Get tailored recommendations on which medical specialist to see and how urgently you should schedule an appointment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <div class="footer-logo">
+                <i class="fa-solid fa-notes-medical"></i> Health<span>AI</span>
+            </div>
+            <p class="disclaimer">
+                <strong>Disclaimer:</strong> This AI system is for informational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.
+            </p>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> HealthAI Triage System. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>
