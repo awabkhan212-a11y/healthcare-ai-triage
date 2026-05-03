@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Healthcare AI Triage System</title>
-    <meta name="description" content="Get instant symptom guidance and triage support with our AI-powered Healthcare Assistant.">
+    <title>AI Healthcare Triage Assistant</title>
+    <meta name="description" content="Get instant symptom analysis and emergency guidance with our advanced AI Healthcare Assistant.">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
@@ -15,106 +17,116 @@
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Navigation (Glassmorphism) -->
     <header class="header">
         <div class="container nav-container">
             <div class="logo">
-                <i class="fa-solid fa-notes-medical"></i> Health<span>AI</span>
+                <div class="logo-icon"><i class="fa-solid fa-notes-medical"></i></div>
+                <span>HealthAI</span>
             </div>
-            <nav>
+            <nav class="desktop-nav">
                 <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#triage">Triage</a></li>
-                    <li><a href="#features">Features</a></li>
+                    <li><a href="#home">Platform</a></li>
+                    <li><a href="#triage">AI Assistant</a></li>
+                    <li><a href="#features">Capabilities</a></li>
                 </ul>
             </nav>
-            <a href="#triage" class="btn btn-outline">Get Support</a>
+            <a href="#triage" class="btn btn-primary nav-cta">Start Chat</a>
         </div>
     </header>
 
     <main>
-        <!-- Hero Section -->
+        <!-- Modern Hero Section -->
         <section id="home" class="hero">
-            <div class="hero-bg-shapes">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
+            <div class="gradient-bg">
+                <div class="gradient-blob shape-1"></div>
+                <div class="gradient-blob shape-2"></div>
+                <div class="gradient-blob shape-3"></div>
             </div>
+            
             <div class="container hero-container">
-                <div class="hero-content">
-                    <span class="badge fade-in-up">AI-Powered Assistance</span>
-                    <h1 class="fade-in-up delay-1">Healthcare AI Triage System</h1>
-                    <p class="fade-in-up delay-2">Get instant symptom guidance and triage support directly from our advanced AI agent. Available 24/7 to guide you to the right care.</p>
+                <div class="hero-content text-center">
+                    <div class="badge-wrapper fade-in-up">
+                        <span class="badge"><i class="fa-solid fa-sparkles"></i> Next-Gen Medical AI</span>
+                    </div>
+                    <h1 class="fade-in-up delay-1">AI Healthcare Triage Assistant</h1>
+                    <p class="hero-subtitle fade-in-up delay-2">Get instant symptom analysis and emergency guidance powered by intelligent diagnostic algorithms.</p>
                     <div class="hero-buttons fade-in-up delay-3">
-                        <a href="#triage" class="btn btn-primary">Start Assessment <i class="fa-solid fa-stethoscope"></i></a>
-                        <a href="#features" class="btn btn-secondary">Learn More</a>
+                        <a href="#triage" class="btn btn-primary btn-lg">Start Chat <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Chatbot Section -->
+        <!-- Centered Chat Section -->
         <section id="triage" class="triage-section">
-            <div class="container text-center">
-                <div class="section-heading slide-in">
-                    <h2>Interactive Triage Assistant</h2>
-                    <p>Interact with our intelligent agent below to analyze your symptoms.</p>
-                </div>
-                
-                <div class="chat-wrapper slide-in delay-2">
-                    <div class="chat-instruction-box">
-                        <div class="pulse-icon">
-                            <i class="fa-regular fa-comment-dots"></i>
-                        </div>
-                        <h3>The AI Agent is Ready</h3>
-                        <p>Click the chat icon in the bottom right corner of your screen to begin your symptom assessment.</p>
-                        <button class="btn btn-primary" onclick="openChat()">Open Chat</button>
+            <div class="container">
+                <div class="chat-layout slide-in">
+                    <!-- Text side or top instructions -->
+                    <div class="chat-instructions text-center">
+                        <h2>Your Personal AI Agent</h2>
+                        <p>Our intelligent system is ready to evaluate your symptoms.</p>
                     </div>
-
-                    <!-- Embed Dialogflow exactly as requested -->
-                    <df-messenger
-                      intent="WELCOME"
-                      chat-title="HealthcareTriageAgent"
-                      agent-id="1bbc8857-8e5e-45f3-aaf2-84155642e2a3"
-                      language-code="en"
-                    ></df-messenger>
+                    
+                    <!-- Highly prominent Chatbot Container -->
+                    <div class="glass-card chat-wrapper">
+                        <div class="chat-inner">
+                            <div class="status-indicator">
+                                <span class="pulse-dot"></span> System Online & Ready
+                            </div>
+                            
+                            <!-- The Exact Dialogflow Script/Element is injected here -->
+                            <df-messenger
+                              intent="WELCOME"
+                              chat-title="HealthcareTriageAgent"
+                              agent-id="1bbc8857-8e5e-45f3-aaf2-84155642e2a3"
+                              language-code="en"
+                            ></df-messenger>
+                            
+                            <div class="chat-helper-text">
+                                <i class="fa-regular fa-comment-dots"></i>
+                                <span>Click the blue widget in the bottom right corner to begin the triage assessment.</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Features Section -->
+        <!-- Glassmorphism Features Section -->
         <section id="features" class="features-section">
             <div class="container">
                 <div class="section-heading text-center slide-in">
-                    <h2>Comprehensive Health Support</h2>
-                    <p>Our system uses advanced AI to provide reliable guidance.</p>
+                    <h2>Advanced Capabilities</h2>
+                    <p>Designed for speed, accuracy, and patient safety.</p>
                 </div>
                 
                 <div class="features-grid">
                     <!-- Feature 1 -->
-                    <div class="feature-card slide-in delay-1">
-                        <div class="icon-box">
-                            <i class="fa-solid fa-clipboard-user"></i>
+                    <div class="glass-card feature-card slide-in delay-1">
+                        <div class="icon-box primary-icon">
+                            <i class="fa-solid fa-stethoscope"></i>
                         </div>
-                        <h3>Symptom Analysis</h3>
-                        <p>Describe what you're feeling, and our AI will analyze your symptoms to provide potential causes and general recommendations.</p>
+                        <h3>Instant Symptom Check</h3>
+                        <p>Analyze your symptoms in real-time with our NLP engine. Receive immediate feedback on potential underlying conditions.</p>
                     </div>
                     
                     <!-- Feature 2 -->
-                    <div class="feature-card emergency slide-in delay-2">
-                        <div class="icon-box">
+                    <div class="glass-card feature-card slide-in delay-2">
+                        <div class="icon-box danger-icon">
                             <i class="fa-solid fa-truck-medical"></i>
                         </div>
                         <h3>Emergency Detection</h3>
-                        <p>Our system is trained to detect critical symptoms and alert you immediately if you need to seek urgent emergency care.</p>
+                        <p>Built-in safety protocols instantly detect critical markers, immediately alerting you if emergency care is required.</p>
                     </div>
                     
                     <!-- Feature 3 -->
-                    <div class="feature-card slide-in delay-3">
-                        <div class="icon-box">
-                            <i class="fa-solid fa-calendar-check"></i>
+                    <div class="glass-card feature-card slide-in delay-3">
+                        <div class="icon-box success-icon">
+                            <i class="fa-solid fa-shield-heart"></i>
                         </div>
-                        <h3>Appointment Guidance</h3>
-                        <p>Get tailored recommendations on which medical specialist to see and how urgently you should schedule an appointment.</p>
+                        <h3>AI Health Guidance</h3>
+                        <p>Receive tailored next steps, including which specialist to consult and actionable home care advice for minor issues.</p>
                     </div>
                 </div>
             </div>
@@ -123,15 +135,21 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container text-center">
-            <div class="footer-logo">
-                <i class="fa-solid fa-notes-medical"></i> Health<span>AI</span>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon"><i class="fa-solid fa-notes-medical"></i></div>
+                        <span>HealthAI</span>
+                    </div>
+                    <p>Next-generation triage and symptom analysis.</p>
+                </div>
+                <div class="footer-disclaimer glass-card">
+                    <strong>Medical Disclaimer:</strong> This AI system provides informational guidance based on your inputs. It is not a substitute for professional medical diagnosis or emergency services. If you are experiencing a life-threatening emergency, call 911 immediately.
+                </div>
             </div>
-            <p class="disclaimer">
-                <strong>Disclaimer:</strong> This AI system is for informational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition.
-            </p>
-            <div class="footer-bottom">
-                <p>&copy; <span id="year"></span> HealthAI Triage System. All rights reserved.</p>
+            <div class="footer-bottom text-center">
+                <p>&copy; <span id="year"></span> HealthAI. All rights reserved.</p>
             </div>
         </div>
     </footer>
